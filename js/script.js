@@ -30,5 +30,3 @@ document.getElementById('.top-menu').style.height = "100%";
 document.getElementById('.top-menu')
 
 // add a class of flex-around to topMenuEl
-
-
