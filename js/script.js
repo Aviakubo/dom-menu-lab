@@ -1,12 +1,23 @@
 // alert("js is connected");
 
 // Menu data structure
-var menuLinks = [
-    {text: 'about', href: '/about'},
-    {text: 'catalog', href: '/catalog'},
-    {text: 'orders', href: '/orders'},
-    {text: 'account', href: '/account'},
-  ];
+const menuLinks = [
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
+];
 
 // set main element to mainEl
 const mainEl = document.querySelector('main');
@@ -64,3 +75,39 @@ menuLinks.forEach(function (menuLinks) {
   aTag.innerHTML = menuLinks.text;
   topMenuEl.appendChild(aTag);
 });
+
+// select and cache the nav id=sub-menu element in a var named subMenuEl
+
+const subMenuEl = document.getElementById("sub-menu");
+
+// Set the height subMenuElelement to be 100%
+
+subMenuEl.style.height = '100%';
+
+// Set the background color of subMenuElto the value stored in the --sub-menu-bg CSS custom property
+
+subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)';
+
+// Add the class of flex-around to the subMenu Elelement
+
+subMenuEl.setAttribute("class", "flex-around");
+
+// Set the CSS position property of subMenuEl to the value of absolute.
+
+subMenuEl.style.position = 'absolute';
+
+// Set the CSS topproperty of subMenuElto the value of 0.
+
+subMenuEl.style.topProperty = 0;
+
+// update menu links array (done above)
+
+
+
+// Select and cache the all of the <a>elements inside of topMenuElin a variable named topMenuLinks.
+
+
+
+// Declare a global showingSubMenuvariable and initialize it to false;
+
+
