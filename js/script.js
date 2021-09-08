@@ -54,6 +54,13 @@ console.log(menuLinks);
 // then setAttribute("href", href) ?
 // 
 
-for(let menuLink of menuLinks) {
-    document.createElement('a');
-}
+// for(let menuLink of menuLinks) {
+//     document.createElement('a');
+// }
+
+menuLinks.forEach(function (menuLinks) {
+  var aTag = document.createElement("a");
+  aTag.setAttribute("href", menuLinks.href)
+  aTag.innerHTML = menuLinks.text;
+  topMenuEl.appendChild(aTag);
+});
