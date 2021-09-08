@@ -59,7 +59,7 @@ topMenuEl.setAttribute("class", "flex-around");
 // Set the new element's content to the value of the textproperty of the "link" object.
 // Append the new element to the topMenuElelement.
 
-console.log(menuLinks);
+// console.log(menuLinks);
 
 // create a variable to createElement('a')
 // then setAttribute("href", href) ?
@@ -104,10 +104,32 @@ subMenuEl.style.topProperty = 0;
 
 
 
-// Select and cache the all of the <a>elements inside of topMenuElin a variable named topMenuLinks.
+// Select and cache the all of the <a>elements inside of topMenuEl in a variable named topMenuLinks.
 
+const topMenuLinks = document.querySelectorAll('nav a');
+// console.log(topMenuLinks);
 
+// Declare a global showingSubMenu variable and initialize it to false;
 
-// Declare a global showingSubMenuvariable and initialize it to false;
+var showingSubMenu = false;
+
+// Attach a delegated 'click' event listener to topMenuEl.
+
+// The first line of code of the event listener function should call the event object's preventDefault()method.
+
+// The second line of code function should immediately return if the element clicked was not an <a>element.
+
+// console.logthe content of the <a>to verify the handler is working
+
+topMenuEl.addEventListener('click', handleClick)
+
+function handleClick(evt) {
+  evt.preventDefault()
+  const element = evt.target;
+  if(element.nodeName !== 'A') {
+    return;
+  }
+  console.log(element.text);
+}
 
 
